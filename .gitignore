@@ -1,0 +1,17 @@
+# Python related
+*.pyc
+*.pyo
+__pycache__/
+
+# Django related
+
+*.sqlite3
+
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# Virtual Environment
+venv/
+env/
