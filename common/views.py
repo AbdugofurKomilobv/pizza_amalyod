@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from blogs.form import ContactPageForm,AboutPageForm
 
 def home_page_view(request):
     return render(request,template_name='index.html')
@@ -23,3 +24,26 @@ def category_page_view(request):
 
 def blog_page_view(request):
     return render(request,template_name='blogs/blogs_list.html')
+
+# ========
+
+def contacts_page_view(request):
+    if request.method == "GET":
+      return render(request,template_name='pages/contact.html')
+    
+    elif request.method == "POST":
+      form = ContactPageForm(request.POST)
+      if form.is_valid():
+          form.save()
+      
+      else:
+          pass
+
+      return render(request,template_name='pages/contact.html')
+
+
+
+
+
+def about_page_view(request):
+    return render(request,template_name="pages/about.html")

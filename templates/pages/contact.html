@@ -52,7 +52,10 @@
             <div class="section-heading heading-dark">
                 <h3 class="item-heading-big">Send Us Message</h3>
             </div>
-            <form id="contact-form" class="contact-form-box">
+            <form id="contact-form" class="contact-form-box" method="post" action="{% url 'pages:contact'%}">
+                {% csrf_token %}
+                {{ form.as_p }}
+
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <input type="text" placeholder="Name *" class="form-control" name="name" data-error="Name field is required"
